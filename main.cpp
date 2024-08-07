@@ -26,13 +26,24 @@ K Add(K a, K b)
 
 void RandomGenerate(vector<AMonster*> Monsters)
 {
-	int random = rand() % 5 + 1;
+	int TotalMonsterCount = rand() % 10 + 1;
 
-	for (int i = 0; i < random; i++)
+	for (int i = 0; i < TotalMonsterCount; i++)
 	{
-		AGoblin* temp = new AGoblin;
+		int type = rand() % 3;
 
-		//Monsters.push_back(new AGoblin);
+		if (type == 0)
+		{
+			Monsters.push_back(new AGoblin);
+		}
+		else if (type == 1)
+		{
+			Monsters.push_back(new ABoar);
+		}
+		else if (type == 2)
+		{
+			Monsters.push_back(new ASlime);
+		}
 	}
 }
 
@@ -103,6 +114,9 @@ int main()
 
 	Player->Move();
 
+
+
+
 	for (AGoblin* goblin : goblins)
 	{
 		goblin->Move();
@@ -134,6 +148,8 @@ int main()
 	{
 		delete slime;
 	}
+
+	// Å×½ºÆ®
 
 	goblins.clear();
 	boars.clear();

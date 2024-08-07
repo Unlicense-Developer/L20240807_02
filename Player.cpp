@@ -19,3 +19,8 @@ void APlayer::Move()
 {
 	cout << "Player 이동" << endl;
 }
+
+void APlayer::Attack()
+{
+	cout << "Player 공격" << endl;
+}

@@ -7,5 +7,6 @@ public:
 	~APlayer();
 
 	virtual void Move() override;
+	void Attack();
 };
 
